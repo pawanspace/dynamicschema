@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.itspawan.protobuf;
+
+message DynamicSchema {
+    repeated string rhsColumns = 1;
+    repeated string lhsColumns = 2;
+    repeated string selectableColumns = 3;
+
+    enum Operation {
+        EQUAL = 0;
+        NOT_EQUAL = 2;
+    }
+
+    message JoinCondition {
+        string lhsColumn = 1;
+        string rhsColumn = 2;
+        Operation operation = 3;
+    }
+
+    repeated JoinCondition conditions = 4;
+}

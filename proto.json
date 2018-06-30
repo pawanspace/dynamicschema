@@ -1,0 +1,25 @@
+{
+  "rhsColumns": [
+    "part_number",
+    "brand_name",
+    "asin"
+  ],
+  "lhsColumns": [
+    "replacementPartNumber",
+    "brand",
+    "wholegoodmodel"
+  ],
+  "selectableColumns": [
+    "replacementPartNumber",
+    "brand",
+    "wholegoodmodel",
+    "asin"
+  ],
+  "conditions": [
+    {
+      "lhsColumn": "replacementPartNumber",
+      "rhsColumn": "part_number",
+      "operation": "EQUAL"
+    }
+  ]
+}
