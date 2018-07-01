@@ -9,14 +9,28 @@ message DynamicSchema {
 
     enum Operation {
         EQUAL = 0;
-        NOT_EQUAL = 2;
+        NOT_EQUAL = 1;
+        IS_NULL = 2;
+        IS_NOT_NULL = 3;
     }
 
     message JoinCondition {
         string lhsColumn = 1;
         string rhsColumn = 2;
-        Operation operation = 3;
+        string rhsValue = 3;
+        string lhsValue = 4;
+        Operation operation = 5;
     }
 
-    repeated JoinCondition conditions = 4;
+    message AndCondition {
+        repeated JoinCondition conditions = 1;
+    }
+
+    message OrCondition {
+        repeated JoinCondition conditions = 1;
+    }
+
+    AndCondition andCondition = 4;
+    OrCondition orCondition = 5;
+    repeated JoinCondition conditions = 6;
 }

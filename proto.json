@@ -1,30 +1,26 @@
 {
-  "rhsColumns": [
-    "part_number",
-    "brand_name",
-    "asin"
-  ],
-  "lhsColumns": [
-    "replacementPartNumber",
-    "brand",
-    "wholegoodmodel"
-  ],
-  "selectableColumns": [
-    "replacementPartNumber",
-    "brand",
-    "wholegoodmodel",
-    "asin"
-  ],
-  "conditions": [
-    {
+  "rhsColumns": ["part_number", "brand_name", "asin", "series"],
+  "lhsColumns": ["replacementPartNumber", "brand", "wholegoodmodel"],
+  "selectableColumns": ["replacementPartNumber", "brand", "wholegoodmodel", "asin"],
+  "andCondition": {
+    "conditions": [{
       "lhsColumn": "replacementPartNumber",
       "rhsColumn": "part_number",
       "operation": "EQUAL"
-    },
-    {
-      "lhsColumn": "brand",
-      "rhsColumn": "brand_name",
-      "operation": "NOT_EQUAL"
-    }
-  ]
+    }]
+  },
+  "orCondition": {
+    "conditions": [
+      {
+        "rhsColumn": "series",
+        "operation": "IS_NOT_NULL"
+      },
+      {
+        "lhsColumn": "brand",
+        "rhsColumn": "brand_name",
+        "operation": "EQUAL"
+      }
+    ]
+  },
+  "conditions": []
 }
