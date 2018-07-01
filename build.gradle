@@ -38,9 +38,16 @@ dependencies {
 // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java-util
     compile group: 'com.google.protobuf', name: 'protobuf-java-util', version: '3.6.0'
 
+// https://mvnrepository.com/artifact/org.scalatest/scalatest
+    testCompile group: 'org.scalatest', name: 'scalatest_2.11', version: '2.2.6'
 
 // https://mvnrepository.com/artifact/com.google.guava/guava
     compile group: 'com.google.guava', name: 'guava', version: '25.1-jre'
+    // https://mvnrepository.com/artifact/org.apache.spark/spark-hive
+    compile group: 'org.apache.spark', name: 'spark-hive_2.11', version: '2.1.1'
+
+
+
 }
 
 protobuf {

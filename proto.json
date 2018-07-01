@@ -20,6 +20,11 @@
       "lhsColumn": "replacementPartNumber",
       "rhsColumn": "part_number",
       "operation": "EQUAL"
+    },
+    {
+      "lhsColumn": "brand",
+      "rhsColumn": "brand_name",
+      "operation": "NOT_EQUAL"
     }
   ]
 }
